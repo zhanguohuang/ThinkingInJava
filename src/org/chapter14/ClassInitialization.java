@@ -5,6 +5,7 @@ import java.util.Random;
 /**
  * 证明了类是在第一次使用静态成员的时候才被加载的
  * 证明了*.class是不会初始化类的，证明Class.forName会初始化类
+ * 证明被static final修饰的类不需要进行初始化就可以读取
  * @author Administrator
  *
  */
