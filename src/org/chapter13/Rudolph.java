@@ -8,3 +8,10 @@ public class Rudolph {
 		}
 	}
 }
+
+/*
+true
+true
+true
+true
+*/
