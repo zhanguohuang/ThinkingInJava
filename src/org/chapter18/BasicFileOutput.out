@@ -1,0 +1,24 @@
+1: package org.chapter18;
+2: 
+3: import java.io.BufferedReader;
+4: import java.io.BufferedWriter;
+5: import java.io.FileWriter;
+6: import java.io.PrintWriter;
+7: import java.io.StringReader;
+8: 
+9: public class BasicFileOutput {
+10: 
+11: 	static String file = "./src/org/chapter18/BasicFileOutput.java";
+12: 	
+13: 	public static void main(String[] args) throws Exception {
+14: 		BufferedReader in = new BufferedReader(new StringReader(BufferedInputFile.read(file)));
+15: 		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("./src/org/chapter18/BasicFileOutput.out")));
+16: 		int lineCount = 1;
+17: 		String s;
+18: 		while((s = in.readLine()) != null) {
+19: 			out.println(lineCount++ + ": " + s);/*写入行号和当前行的字符串*/
+20: 		}
+21: 		out.close();
+22: 		System.out.println(BufferedInputFile.read("./src/org/chapter18/BasicFileOutput.out"));
+23: 	}
+24: }

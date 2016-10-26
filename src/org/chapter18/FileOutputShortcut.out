@@ -1,0 +1,21 @@
+1: package org.chapter18;
+2: 
+3: import java.io.BufferedReader;
+4: import java.io.PrintWriter;
+5: import java.io.StringReader;
+6: 
+7: public class FileOutputShortcut {
+8: 
+9: 	static String file = "./src/org/chapter18/FileOutputShortcut.out";
+10: 	
+11: 	public static void main(String[] args) throws Exception {
+12: 		BufferedReader in = new BufferedReader(new StringReader(BufferedInputFile.read("./src/org/chapter18/FileOutputShortcut.java")));
+13: 		PrintWriter out = new PrintWriter(file);
+14: 		int lineCount = 1;
+15: 		String s;
+16: 		while((s = in.readLine()) != null)
+17: 			out.println(lineCount++ + ": " + s);
+18: 		out.close();
+19: 		System.out.println(BufferedInputFile.read(file));
+20: 	}
+21: }
